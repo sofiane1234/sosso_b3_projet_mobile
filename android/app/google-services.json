@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "713595334255",
+    "project_id": "react-chative-373f3",
+    "storage_bucket": "react-chative-373f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713595334255:android:1c8659099736479bec279a",
+        "android_client_info": {
+          "package_name": "com.reapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713595334255-aqml5gnj24jcsej02ml3jeab2cpil10d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbw7FlhpWWBz34Q1djkcsqLxbVj6XJg4A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713595334255-aqml5gnj24jcsej02ml3jeab2cpil10d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
