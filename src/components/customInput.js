@@ -1,7 +1,7 @@
 import React from 'react';
 import {TextInput, View, StyleSheet} from 'react-native';
 
-const CustomInupt = ({value, setValue, placeholder, secureTextEntry}) => {
+const CustomInupt = ({value, setValue, placeholder, secureTextEntry, autoCorrect, keyboardType}) => {
 
   return (
     <View style={styles.container}>
@@ -11,6 +11,8 @@ const CustomInupt = ({value, setValue, placeholder, secureTextEntry}) => {
         value={value}
         onChangeText={setValue}
         secureTextEntry={secureTextEntry}
+        autoCorrect={autoCorrect}
+        keyboardType={keyboardType}
       />
     </View>
   );
@@ -29,7 +31,7 @@ const styles = StyleSheet.create({
   },
 
   input: {
-   
+    marginVertical : 10
   },
 });
 

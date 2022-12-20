@@ -9,6 +9,8 @@ const CustomButton = ({onPress, text}) => {
     );
 };
 
+// styled components
+
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#3B71F3',

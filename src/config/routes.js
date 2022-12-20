@@ -5,7 +5,7 @@ import {StyleSheet, View} from 'react-native';
 import Register from '../screens/register';
 import Home from '../screens/home';
 import Practice from '../screens/practice';
-import Login from '../login';
+import Login from '../screens/login';
 import ChatScrean from '../screens/chatScreen/chatScreen';
 
 const Stack = createNativeStackNavigator();
@@ -13,7 +13,8 @@ const Stack = createNativeStackNavigator();
 const Routes = props => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Chat">
+      <Stack.Navigator initialRouteName="Register">
+        
         <Stack.Screen
           name="Login"
           component={Login}
@@ -21,24 +22,23 @@ const Routes = props => {
         />
 
         <Stack.Screen
-          name="Register"
-          component={Register}
-          options={{title: 'Inscription'}}
-       
+          name="Home"
+          component={Home}
+          options={{title: 'Accueil'}}
         />
 
         <Stack.Screen
           name="Chat"
           component={ChatScrean}
           options={{title: 'Chat'}}
-       
         />
 
         <Stack.Screen
-          name="Practice"
-          component={Practice}
-          options={{title: 'Practice'}}
+          name="Register"
+          component={Register}
+          options={{title: 'Inscription'}}
         />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

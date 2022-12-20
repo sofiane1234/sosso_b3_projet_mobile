@@ -1,17 +1,14 @@
 import React from "react";
-import { View, useState } from "react-native";
+import { useEffect } from "react";
+import { View, useState, Text, ScrollView, TextInput } from "react-native";
 import CustomInupt from "../../components/customInput";
+import {firebase} from "../../firebase";
 
 const ChatScrean = () => {
-    const [chatBar, setChatBar] = useState('');
 
     return (
         <View>
-            <CustomInupt 
-                placeholder="Entrez votre message" 
-                value={chatBar} 
-                setValue={setChatBar} 
-            />
+            <Text> Liste des utilisateurs  {firebase.auth().currentUser.email}</Text>
         </View>
     );
 };
