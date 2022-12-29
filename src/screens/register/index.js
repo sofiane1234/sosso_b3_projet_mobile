@@ -1,76 +1,87 @@
-import React from 'react';
-import {View, StyleSheet, Touchable, TouchableOpacity} from 'react-native';
-import {useState} from 'react';
+import {View, TouchableOpacity, Text} from 'react-native';
+import {React, useState} from 'react';
 import CustomInupt from '../../components/customInput';
 import CustomButton from '../../components/customButton';
-import { firebase } from '../../firebase';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { Text } from 'react-native';
+import {firebase} from '../../firebase';
+import {useNavigation} from '@react-navigation/native';
+import {RegisterStyle} from '../../components/styledExample/styledExample';
+import styled from 'styled-components';
 
 const Register = () => {
-
   const navigation = useNavigation();
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
-  
- 
+
   const RegisterPressed = async (email, password) => {
-    await firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(() => {
-      const user = firebase.auth().currentUser;
-      console.log('Inscription de : ', user.email)
-      .catch((err) => {
-        alert(err.message)
-      })
+    await firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
       .then(() => {
-        firebase.firestore().collection('users')
-        .doc(firebase.auth().currentUser.uid)
-        .set({
-          email,
-          password,
-        })
+        const user = firebase.auth().currentUser;
+        console
+          .log('Inscription de : ', user.email)
+          .catch(err => {
+            alert(err.message);
+          })
+          .then(() => {
+            firebase
+              .firestore()
+              .collection('users')
+              .doc(firebase.auth().currentUser.uid)
+              .set({
+                email,
+                password,
+              });
+          })
+          .catch(err => {
+            alert(err.message);
+          });
       })
-      .catch((err) => {
-        alert(err.message)
-      })
-    })
-    .catch((err => {
-      alert(err.message)
-    }))
-  }
-  
+      .catch(err => {
+        alert(err.message);
+      });
+  };
+
   return (
-    <View style={styles.registering}>
-     
-     <CustomInupt
-        placeholder="Adresse email"
-        value={email}
-        setValue={setEmail}
-        autoCorrect={false}
-      />
+    <View>
+      <RegisterStyle>
+        <InputStyle>
+          <CustomInupt
+            placeholder="Adresse email"
+            value={email}
+            setValue={setEmail}
+            autoCorrect={false}
+          />
+        </InputStyle>
 
-      <CustomInupt
-        placeholder="Mot de passe"
-        value={password}
-        setValue={setPassword}
-        autoCorrect={false}
-        secureTextEntry
-      />
+        <InputStyle>
+          <CustomInupt
+            placeholder="Mot de passe"
+            value={password}
+            setValue={setPassword}
+            autoCorrect={false}
+            secureTextEntry
+          />
+        </InputStyle>
 
-      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-        <Text>Se connecter</Text> 
-      </TouchableOpacity> 
-  
-      <CustomButton text="S'inscrire" onPress={() => RegisterPressed(email, password)} />
+        <CustomButton
+          text="S'inscrire"
+          onPress={() => RegisterPressed(email, password)}
+        />
+        <CustomButton
+          text="Aller vers Connexion"
+          onPress={() => navigation.navigate('Login')}
+        />
+      </RegisterStyle>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  registering: {
-    alignItems: 'center',
-    padding: 20,
-  },
-});
-
+const InputStyle = styled.View`
+  background-color: lightgrey;
+  width: 90%;
+  margin-left: 20px;
+  margin-top: 25px;
+  place-items: center;
+`;
 export default Register;

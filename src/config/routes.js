@@ -1,10 +1,8 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {StyleSheet, View} from 'react-native';
 import Register from '../screens/register';
 import Home from '../screens/home';
-import Practice from '../screens/practice';
 import Login from '../screens/login';
 import ChatScrean from '../screens/chatScreen/chatScreen';
 
@@ -12,6 +10,7 @@ const Stack = createNativeStackNavigator();
 
 const Routes = props => {
   return (
+    
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Register">
         
