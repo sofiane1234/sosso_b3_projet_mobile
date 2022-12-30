@@ -1,6 +1,5 @@
-import React, {useEffect} from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
-import {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {View} from 'react-native';
 import CustomInupt from '../../components/customInput';
 import CustomButton from '../../components/customButton';
 import {firebase} from '../../firebase';
@@ -37,7 +36,7 @@ const Login = () => {
 
   return (
     <View>
-      <RegisterStyle>
+      <RegisterStyle bg_color='lime'>
         <InputStyle>
           <CustomInupt
             placeholder="Adresse email"
@@ -58,6 +57,7 @@ const Login = () => {
         <ThemeProvider theme={theme}>
           <CustomButton text="Se connecter" onPress={ConnectPressed} />
           <CustomButton
+            
             text="Aller vers Inscription"
             onPress={() => navigation.navigate('Register')}
           />
@@ -68,11 +68,14 @@ const Login = () => {
 };
 
 const InputStyle = styled.View`
+  font-style: italic;
   background-color: lightgrey;
   width: 90%;
   margin-left: 20px;
   margin-top: 25px;
+  margin-bottom: 2px;
   place-items: center;
+  text-transform: lowercase;
 `;
 
 export default Login;

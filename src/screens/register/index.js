@@ -1,4 +1,4 @@
-import {View, TouchableOpacity, Text} from 'react-native';
+import {View} from 'react-native';
 import {React, useState} from 'react';
 import CustomInupt from '../../components/customInput';
 import CustomButton from '../../components/customButton';
@@ -44,7 +44,7 @@ const Register = () => {
 
   return (
     <View>
-      <RegisterStyle>
+      <RegisterStyle bg_color='cyan'>
         <InputStyle>
           <CustomInupt
             placeholder="Adresse email"

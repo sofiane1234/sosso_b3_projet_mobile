@@ -25,6 +25,4 @@ const CustomInupt = ({
   );
 };
 
-
-
 export default CustomInupt;
