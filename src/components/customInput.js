@@ -1,7 +1,7 @@
 import React from 'react';
 import {TextInput, View} from 'react-native';
 import styled from 'styled-components';
-import {RegisterStyle} from './styledExample/styledExample';
+import {RegisterStyle} from './styledComponents/styledComponents';
 
 const CustomInupt = ({
   value,

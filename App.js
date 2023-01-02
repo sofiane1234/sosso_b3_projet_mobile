@@ -14,10 +14,4 @@ const App = () => {
   )
 };
 
-const styles = StyleSheet.create({
-  title: {
-    alignItems: 'center',
-  },
-});
-
 export default App;

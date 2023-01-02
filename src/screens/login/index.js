@@ -4,9 +4,8 @@ import CustomInupt from '../../components/customInput';
 import CustomButton from '../../components/customButton';
 import {firebase} from '../../firebase';
 import styled from 'styled-components';
-import {ThemeProvider, useNavigation} from '@react-navigation/native';
-import {RegisterStyle} from '../../components/styledExample/styledExample';
-import theme from '../../config/theme';
+import {useNavigation} from '@react-navigation/native';
+import {RegisterStyle} from '../../components/styledComponents/styledComponents';
 
 const Login = () => {
   const navigation = useNavigation();
@@ -36,7 +35,7 @@ const Login = () => {
 
   return (
     <View>
-      <RegisterStyle bg_color='lime'>
+      <RegisterStyle bg_color="lime">
         <InputStyle>
           <CustomInupt
             placeholder="Adresse email"
@@ -54,14 +53,8 @@ const Login = () => {
             secureTextEntry
           />
         </InputStyle>
-        <ThemeProvider theme={theme}>
-          <CustomButton text="Se connecter" onPress={ConnectPressed} />
-          <CustomButton
-            
-            text="Aller vers Inscription"
-            onPress={() => navigation.navigate('Register')}
-          />
-        </ThemeProvider>
+        <CustomButton text="Se connecter" onPress={ConnectPressed} />
+        <CustomButton text="Aller vers Inscription" onPress={() => navigation.navigate('Register')} />
       </RegisterStyle>
     </View>
   );
