@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ChatList from '../chatComponents';
 
 const RegisterStyle = styled.View`
   height: 100%;
@@ -14,7 +15,6 @@ const TextStyle = styled.Text`
 
 const ButtonStyle = styled.View`
   background-color: blue;
-  color: yellowgreen;
   width: 90%;
   padding: 15px;
   margin-left: 15px;
@@ -24,4 +24,20 @@ const ButtonStyle = styled.View`
   background-color: ${(props) => props.bg};
 `;
 
-export {RegisterStyle, ButtonStyle, TextStyle};
+const FlatListStyle = styled.View`
+  background-color: lime;
+  padding: 15px;
+  border-radius: 5px;
+  width: 80%;
+  margin-left: 40px;
+  align-items: center;
+  margin-top: 40px;
+`;
+
+const ChatListStyle = styled.Text`
+  font-weight: bold;
+  font-size: 20px;
+  color: whitesmoke;
+`;
+
+export {RegisterStyle, ButtonStyle, TextStyle, FlatListStyle, ChatListStyle};

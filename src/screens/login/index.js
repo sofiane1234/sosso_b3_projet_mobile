@@ -37,31 +37,37 @@ const Login = () => {
     <View>
       <RegisterStyle bg_color="lime">
         <InputStyle>
-          <CustomInupt
-            placeholder="Adresse email"
-            value={email}
-            setValue={setEmail}
-            autoCorrect={false}
-          />
+          <InputStyleText>
+            <CustomInupt
+              placeholder="Adresse email"
+              value={email}
+              setValue={setEmail}
+              autoCorrect={false}
+            />
+          </InputStyleText>
         </InputStyle>
         <InputStyle>
-          <CustomInupt
-            placeholder="Mot de passe"
-            value={password}
-            setValue={setPassword}
-            autoCorrect={false}
-            secureTextEntry
-          />
+          <InputStyleText>
+            <CustomInupt
+              placeholder="Mot de passe"
+              value={password}
+              setValue={setPassword}
+              autoCorrect={false}
+              secureTextEntry
+            />
+          </InputStyleText>
         </InputStyle>
         <CustomButton text="Se connecter" onPress={ConnectPressed} />
-        <CustomButton text="Aller vers Inscription" onPress={() => navigation.navigate('Register')} />
+        <CustomButton
+          text="Aller vers Inscription"
+          onPress={() => navigation.navigate('Register')}
+        />
       </RegisterStyle>
     </View>
   );
 };
 
 const InputStyle = styled.View`
-  font-style: italic;
   background-color: lightgrey;
   width: 90%;
   margin-left: 20px;
@@ -69,6 +75,10 @@ const InputStyle = styled.View`
   margin-bottom: 2px;
   place-items: center;
   text-transform: lowercase;
+`;
+
+const InputStyleText = styled.Text`
+  margin-left: 5px;
 `;
 
 export default Login;

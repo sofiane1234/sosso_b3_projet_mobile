@@ -4,8 +4,10 @@ import CustomInupt from '../../components/customInput';
 import CustomButton from '../../components/customButton';
 import {firebase} from '../../firebase';
 import {useNavigation} from '@react-navigation/native';
-import {RegisterStyle} from '../../components/styledExample/styledExample';
+import {RegisterStyle} from '../../components/styledComponents/styledComponents';
+import database from '@react-native-firebase/database';
 import styled from 'styled-components';
+import { uuidv4 } from '@firebase/util';
 
 const Register = () => {
   const navigation = useNavigation();
@@ -37,14 +39,11 @@ const Register = () => {
             alert(err.message);
           });
       })
-      .catch(err => {
-        alert(err.message);
-      });
   };
 
   return (
     <View>
-      <RegisterStyle bg_color='cyan'>
+      <RegisterStyle bg_color="cyan">
         <InputStyle>
           <CustomInupt
             placeholder="Adresse email"

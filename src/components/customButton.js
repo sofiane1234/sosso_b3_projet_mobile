@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
-import { ButtonStyle, TextStyle} from './styledComponents/styledComponents';
+import { ButtonStyle, TextStyle} from './styledComponents/styledComponents'
 
 const CustomButton = ({onPress, text}) => {
   return (
