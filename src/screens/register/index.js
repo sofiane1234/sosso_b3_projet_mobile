@@ -7,7 +7,7 @@ import {useNavigation} from '@react-navigation/native';
 import {RegisterStyle} from '../../components/styledComponents/styledComponents';
 import database from '@react-native-firebase/database';
 import styled from 'styled-components';
-import { uuidv4 } from '@firebase/util';
+import {uuidv4} from '@firebase/util';
 
 const Register = () => {
   const navigation = useNavigation();
@@ -38,29 +38,33 @@ const Register = () => {
           .catch(err => {
             alert(err.message);
           });
-      })
+      });
   };
 
   return (
     <View>
       <RegisterStyle bg_color="cyan">
         <InputStyle>
-          <CustomInupt
-            placeholder="Adresse email"
-            value={email}
-            setValue={setEmail}
-            autoCorrect={false}
-          />
+          <InputStyleText>
+            <CustomInupt
+              placeholder="Adresse email"
+              value={email}
+              setValue={setEmail}
+              autoCorrect={false}
+            />
+          </InputStyleText>
         </InputStyle>
 
         <InputStyle>
-          <CustomInupt
-            placeholder="Mot de passe"
-            value={password}
-            setValue={setPassword}
-            autoCorrect={false}
-            secureTextEntry
-          />
+          <InputStyleText>
+            <CustomInupt
+              placeholder="Mot de passe"
+              value={password}
+              setValue={setPassword}
+              autoCorrect={false}
+              secureTextEntry
+            />
+          </InputStyleText>
         </InputStyle>
 
         <CustomButton
@@ -83,4 +87,9 @@ const InputStyle = styled.View`
   margin-top: 25px;
   place-items: center;
 `;
+
+const InputStyleText = styled.Text`
+  margin-left: 5px;
+`;
+
 export default Register;

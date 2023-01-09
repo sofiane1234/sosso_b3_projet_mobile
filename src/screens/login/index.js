@@ -5,7 +5,10 @@ import CustomButton from '../../components/customButton';
 import {firebase} from '../../firebase';
 import styled from 'styled-components';
 import {useNavigation} from '@react-navigation/native';
-import {RegisterStyle} from '../../components/styledComponents/styledComponents';
+import {
+  ButtonStyle,
+  RegisterStyle,
+} from '../../components/styledComponents/styledComponents';
 
 const Login = () => {
   const navigation = useNavigation();
@@ -58,6 +61,7 @@ const Login = () => {
           </InputStyleText>
         </InputStyle>
         <CustomButton text="Se connecter" onPress={ConnectPressed} />
+
         <CustomButton
           text="Aller vers Inscription"
           onPress={() => navigation.navigate('Register')}

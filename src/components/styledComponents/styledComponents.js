@@ -14,7 +14,7 @@ const TextStyle = styled.Text`
 `;
 
 const ButtonStyle = styled.View`
-  background-color: blue;
+  background-color: ${(props) => props.bg};
   width: 90%;
   padding: 15px;
   margin-left: 15px;
